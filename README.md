@@ -16,6 +16,7 @@ You will need:
 ### Prerequisites
 * [Terraform](https://www.terraform.io/)
 * [Pre-commit](https://pre-commit.com/)
+* The [Github CLI](https://github.com/cli/cli)
 * A decent text editor or IDE
 
 ### Getting started
@@ -32,3 +33,7 @@ As standard for a Terraform module.
 
 ## Deployment
 `git push`
+
+then
+
+`gh release create <semver>`
