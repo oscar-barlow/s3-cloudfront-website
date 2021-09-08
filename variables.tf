@@ -1,7 +1,6 @@
 variable "project_name" {
   type        = string
   description = "the name of this project"
-  default     = "allgaeuer-hof-website"
 }
 
 variable "env" {
