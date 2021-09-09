@@ -126,6 +126,7 @@ data "aws_iam_policy_document" "website_deploy_policy_document" {
       "s3:DeleteObject",
       "s3:ListObject",
       "s3:ListObjectsV2",
+      "s3:CopyObject",
       "s3:ListBucket",
       "s3:PutObject"
     ]
