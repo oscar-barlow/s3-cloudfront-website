@@ -20,8 +20,8 @@ resource "aws_s3_bucket" "website_bucket" {
   acl = "private"
 
   website {
-    index_document = "index.html"
-    error_document = "error.html"
+    index_document = var.index_document
+    error_document = var.error_document
   }
 
   tags = {
@@ -100,7 +100,7 @@ resource "aws_cloudfront_distribution" "distribution" {
     viewer_protocol_policy = "redirect-to-https"
   }
 
-  price_class = "PriceClass_100"
+  price_class = var.price_class
 
   viewer_certificate {
     acm_certificate_arn = var.certificate_arn
@@ -126,7 +126,6 @@ data "aws_iam_policy_document" "website_deploy_policy_document" {
       "s3:DeleteObject",
       "s3:ListObject",
       "s3:ListObjectsV2",
-      "s3:CopyObject",
       "s3:ListBucket",
       "s3:PutObject"
     ]
