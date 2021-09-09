@@ -32,3 +32,9 @@ variable "price_class" {
   type        = string
   description = "Cloudfront distribution price class"
 }
+
+variable "routing_rules" {
+  type        = string
+  description = "Quoted JSON array of routing rules for the bucket, see https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-websiteconfiguration-routingrules.html"
+  default     = "[]"
+}

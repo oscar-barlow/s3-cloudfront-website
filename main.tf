@@ -22,12 +22,13 @@ resource "aws_s3_bucket" "website_bucket" {
   website {
     index_document = var.index_document
     error_document = var.error_document
+
+    routing_rules = var.routing_rules
   }
 
   tags = {
     Name = "${var.project_name}-${var.env}"
   }
-
 }
 
 data "aws_iam_policy_document" "website_bucket_policy_document" {
