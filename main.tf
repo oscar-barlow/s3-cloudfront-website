@@ -44,11 +44,14 @@ data "aws_iam_policy_document" "website_bucket_policy_document" {
     sid = "publicReadAccess"
 
     actions = [
-      "s3:GetObject"
+      "s3:GetObject",
+      "s3:ListObject",
+      "s3:ListObjectsV2"
     ]
 
     resources = [
-      "${aws_s3_bucket.website_bucket.arn}/*"
+      "${aws_s3_bucket.website_bucket.arn}/*",
+      aws_s3_bucket.website_bucket.arn
     ]
   }
 }
